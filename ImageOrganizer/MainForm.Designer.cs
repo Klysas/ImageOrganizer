@@ -28,12 +28,37 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			this.imageBlockControl1 = new ImageOrganizer.ImageBlockControl();
+			this.SuspendLayout();
+			// 
+			// imageBlockControl1
+			// 
+			this.imageBlockControl1.AllowDrop = true;
+			this.imageBlockControl1.Location = new System.Drawing.Point(13, 13);
+			this.imageBlockControl1.Name = "imageBlockControl1";
+			this.imageBlockControl1.Size = new System.Drawing.Size(804, 573);
+			this.imageBlockControl1.TabIndex = 0;
+			// 
+			// MainForm
+			// 
+			this.AllowDrop = true;
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Text = "Form1";
+			this.AutoSize = true;
+			this.ClientSize = new System.Drawing.Size(667, 333);
+			this.Controls.Add(this.imageBlockControl1);
+			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Image Organizer";
+			this.ResumeLayout(false);
+
 		}
 
 		#endregion
+
+		private ImageBlockControl imageBlockControl1;
+
+
 	}
 }
 

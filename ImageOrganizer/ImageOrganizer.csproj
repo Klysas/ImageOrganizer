@@ -31,7 +31,53 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Neurotec">
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Biometrics">
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Biometrics.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Biometrics.Client">
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Biometrics.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Biometrics.Gui">
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Biometrics.Gui.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Cluster">
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Cluster.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Devices, Version=6.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Devices.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Devices.Virtual">
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Devices.Virtual.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Gui">
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Gui.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Licensing">
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Media, Version=6.0.0.0, Culture=neutral, PublicKeyToken=ea4ecf06177ea613, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Media.Processing">
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Media.Processing.dll</HintPath>
+    </Reference>
+    <Reference Include="Neurotec.Media_FX35">
+      <HintPath>..\..\..\..\..\..\..\temp\_SDKs\_Neurotec\Neurotec_Biometric_6_0_SDK_138683\Bin\Win32_x86\Neurotec.Media_FX35.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,8 +88,27 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImageBlockControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageBlockControl.Designer.cs">
+      <DependentUpon>ImageBlockControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageControl.Designer.cs">
+      <DependentUpon>ImageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImagePairControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImagePairControl.Designer.cs">
+      <DependentUpon>ImagePairControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,6 +117,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ImageBlockControl.resx">
+      <DependentUpon>ImageBlockControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageControl.resx">
+      <DependentUpon>ImageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagePairControl.resx">
+      <DependentUpon>ImagePairControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -31,11 +31,13 @@ namespace ImageOrganizer
 		{
 			this.GrpBox_Main = new System.Windows.Forms.GroupBox();
 			this._irisView = new Neurotec.Biometrics.Gui.NIrisView();
+			this.Btn_LoadImage = new System.Windows.Forms.Button();
 			this.GrpBox_Main.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// GrpBox_Main
 			// 
+			this.GrpBox_Main.Controls.Add(this.Btn_LoadImage);
 			this.GrpBox_Main.Controls.Add(this._irisView);
 			this.GrpBox_Main.Location = new System.Drawing.Point(0, 0);
 			this.GrpBox_Main.Name = "GrpBox_Main";
@@ -57,6 +59,16 @@ namespace ImageOrganizer
 			this._irisView.Size = new System.Drawing.Size(200, 200);
 			this._irisView.TabIndex = 0;
 			// 
+			// Btn_LoadImage
+			// 
+			this.Btn_LoadImage.Location = new System.Drawing.Point(222, 20);
+			this.Btn_LoadImage.Name = "Btn_LoadImage";
+			this.Btn_LoadImage.Size = new System.Drawing.Size(115, 23);
+			this.Btn_LoadImage.TabIndex = 1;
+			this.Btn_LoadImage.Text = "Load Image";
+			this.Btn_LoadImage.UseVisualStyleBackColor = true;
+			this.Btn_LoadImage.Click += new System.EventHandler(this.Btn_LoadImage_Click);
+			// 
 			// ImageControl
 			// 
 			this.AllowDrop = true;
@@ -74,5 +86,6 @@ namespace ImageOrganizer
 
 		private System.Windows.Forms.GroupBox GrpBox_Main;
 		private NIrisView _irisView;
+		private System.Windows.Forms.Button Btn_LoadImage;
 	}
 }

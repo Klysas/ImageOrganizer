@@ -26,8 +26,22 @@ namespace ImageOrganizer
 				item.Location = new Point(0, 0 + (i*item.Height));
 				_list[i] = item;
 			}
+		}
 
-			
+		public ImagePairControl[] ImagePairControls
+		{
+			get
+			{
+				return _list;
+			}
+		}
+
+		public void Clear()
+		{
+			foreach (var item in _list)
+			{
+				item.Clear();
+			}
 		}
 	}
 }

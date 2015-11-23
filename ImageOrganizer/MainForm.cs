@@ -17,38 +17,44 @@ namespace ImageOrganizer
 		public MainForm()
 		{
 			InitializeComponent();
-
-
-			//Process proc = new Process();
-			//proc.StartInfo.FileName = @"C:\Users\martynasv\AppData\Local\Android\sdk\platform-tools\adb.exe";
-			//proc.StartInfo.Arguments = "devices";
-			//proc.StartInfo.CreateNoWindow = true;
-			//proc.StartInfo.RedirectStandardOutput = true;
-			//proc.StartInfo.UseShellExecute = false;
-			//proc.Start();
-
-			//while (!proc.StandardOutput.EndOfStream)
-			//{
-			//	string line = proc.StandardOutput.ReadLine();
-			//	// do something with line
-			//	Console.WriteLine(line);
-			//}
-
-
-
-			//FileSystemWatcher watcher = new FileSystemWatcher(@"XT1032\Internal storage\DCIM\Camera");
-			//watcher.Created += watcher_Created;
-
 		}
-
-		//static void watcher_Created(object sender, FileSystemEventArgs e)
-		//{
-		//	Console.WriteLine(e.FullPath);
-		//}
 
 		private void BtnClick_SaveImages(object sender, EventArgs e)
 		{
+			if(TxtBox_Name.Text != string.Empty && TxtBox_DatabasePath.Text != string.Empty)
+			{
+				string directory = Path.GetDirectoryName(TxtBox_DatabasePath.Text.Trim() + "\\");
+				if (directory == null)
+				{
+					MessageBox.Show("Directory path is incorrect.");
+					return;
+				}
 
+				if (!Directory.Exists(directory))
+				{
+					Console.WriteLine("Directory created: "+ directory);
+					Directory.CreateDirectory(directory);
+				}
+
+				//Check if all images are loaded
+				//foreach (var item in imageBlockControl1.ImagePairControls)
+				//{
+				//	if (!item.Left.IsImageLoaded() || !item.Right.IsImageLoaded())
+				//	{
+				//		MessageBox.Show("Not all images are loaded.");
+				//		return;
+				//	}
+				//}
+				
+				//Save image files.
+				foreach (var pairControl in imageBlockControl1.ImagePairControls)
+				{
+					string path = directory + "\\" + string.Format("{0}_{1}_{2}{3}", TxtBox_Name.Text.Trim(), 1, pairControl.Index, pairControl.Right.ImageExtension);
+					pairControl.Right.Image.Save(path);
+					path = directory + "\\" + string.Format("{0}_{1}_{2}{3}", TxtBox_Name.Text.Trim(), 2, pairControl.Index, pairControl.Left.ImageExtension);
+					pairControl.Left.Image.Save(path);
+				}
+			}
 		}
 
 		private void BtnClick_ClearImages(object sender, EventArgs e)

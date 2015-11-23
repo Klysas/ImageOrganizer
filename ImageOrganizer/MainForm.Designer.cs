@@ -32,6 +32,7 @@
 			this.Btn_SaveImages = new System.Windows.Forms.Button();
 			this.Btn_ClearImages = new System.Windows.Forms.Button();
 			this.imageBlockControl1 = new ImageOrganizer.ImageBlockControl();
+			this.TxtBox_Name = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// TxtBox_DatabasePath
@@ -40,6 +41,7 @@
 			this.TxtBox_DatabasePath.Name = "TxtBox_DatabasePath";
 			this.TxtBox_DatabasePath.Size = new System.Drawing.Size(230, 20);
 			this.TxtBox_DatabasePath.TabIndex = 1;
+			this.TxtBox_DatabasePath.Text = "C:\\";
 			// 
 			// Btn_SaveImages
 			// 
@@ -70,6 +72,13 @@
 			this.imageBlockControl1.Size = new System.Drawing.Size(804, 573);
 			this.imageBlockControl1.TabIndex = 0;
 			// 
+			// TxtBox_Name
+			// 
+			this.TxtBox_Name.Location = new System.Drawing.Point(438, 15);
+			this.TxtBox_Name.Name = "TxtBox_Name";
+			this.TxtBox_Name.Size = new System.Drawing.Size(100, 20);
+			this.TxtBox_Name.TabIndex = 4;
+			// 
 			// MainForm
 			// 
 			this.AllowDrop = true;
@@ -77,6 +86,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(667, 333);
+			this.Controls.Add(this.TxtBox_Name);
 			this.Controls.Add(this.Btn_ClearImages);
 			this.Controls.Add(this.Btn_SaveImages);
 			this.Controls.Add(this.TxtBox_DatabasePath);
@@ -95,6 +105,7 @@
 		private System.Windows.Forms.TextBox TxtBox_DatabasePath;
 		private System.Windows.Forms.Button Btn_SaveImages;
 		private System.Windows.Forms.Button Btn_ClearImages;
+		private System.Windows.Forms.TextBox TxtBox_Name;
 
 
 	}

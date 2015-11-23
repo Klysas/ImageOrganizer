@@ -31,8 +31,8 @@
 			this.TxtBox_DatabasePath = new System.Windows.Forms.TextBox();
 			this.Btn_SaveImages = new System.Windows.Forms.Button();
 			this.Btn_ClearImages = new System.Windows.Forms.Button();
-			this.imageBlockControl1 = new ImageOrganizer.ImageBlockControl();
 			this.TxtBox_Name = new System.Windows.Forms.TextBox();
+			this.ImageBlockControl_1 = new ImageOrganizer.ImageBlockControl();
 			this.SuspendLayout();
 			// 
 			// TxtBox_DatabasePath
@@ -63,21 +63,21 @@
 			this.Btn_ClearImages.UseVisualStyleBackColor = true;
 			this.Btn_ClearImages.Click += new System.EventHandler(this.BtnClick_ClearImages);
 			// 
-			// imageBlockControl1
-			// 
-			this.imageBlockControl1.AllowDrop = true;
-			this.imageBlockControl1.AutoScroll = true;
-			this.imageBlockControl1.Location = new System.Drawing.Point(12, 51);
-			this.imageBlockControl1.Name = "imageBlockControl1";
-			this.imageBlockControl1.Size = new System.Drawing.Size(804, 573);
-			this.imageBlockControl1.TabIndex = 0;
-			// 
 			// TxtBox_Name
 			// 
 			this.TxtBox_Name.Location = new System.Drawing.Point(438, 15);
 			this.TxtBox_Name.Name = "TxtBox_Name";
 			this.TxtBox_Name.Size = new System.Drawing.Size(100, 20);
 			this.TxtBox_Name.TabIndex = 4;
+			// 
+			// ImageBlockControl_1
+			// 
+			this.ImageBlockControl_1.AllowDrop = true;
+			this.ImageBlockControl_1.AutoScroll = true;
+			this.ImageBlockControl_1.Location = new System.Drawing.Point(12, 51);
+			this.ImageBlockControl_1.Name = "ImageBlockControl_1";
+			this.ImageBlockControl_1.Size = new System.Drawing.Size(804, 573);
+			this.ImageBlockControl_1.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -90,7 +90,7 @@
 			this.Controls.Add(this.Btn_ClearImages);
 			this.Controls.Add(this.Btn_SaveImages);
 			this.Controls.Add(this.TxtBox_DatabasePath);
-			this.Controls.Add(this.imageBlockControl1);
+			this.Controls.Add(this.ImageBlockControl_1);
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Image Organizer";
@@ -101,7 +101,7 @@
 
 		#endregion
 
-		private ImageBlockControl imageBlockControl1;
+		private ImageBlockControl ImageBlockControl_1;
 		private System.Windows.Forms.TextBox TxtBox_DatabasePath;
 		private System.Windows.Forms.Button Btn_SaveImages;
 		private System.Windows.Forms.Button Btn_ClearImages;

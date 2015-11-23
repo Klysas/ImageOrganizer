@@ -37,17 +37,17 @@ namespace ImageOrganizer
 				}
 
 				//Check if all images are loaded
-				//foreach (var item in imageBlockControl1.ImagePairControls)
-				//{
-				//	if (!item.Left.IsImageLoaded() || !item.Right.IsImageLoaded())
-				//	{
-				//		MessageBox.Show("Not all images are loaded.");
-				//		return;
-				//	}
-				//}
+				foreach (var item in imageBlockControl1.ImagePairControls)
+				{
+					if (!item.Left.IsImageLoaded() || !item.Right.IsImageLoaded())
+					{
+						MessageBox.Show("Not all images are loaded.");
+						return;
+					}
+				}
 				
 				//Save image files.
-				foreach (var pairControl in imageBlockControl1.ImagePairControls)
+				foreach (var pairControl in ImageBlockControl_1.ImagePairControls)
 				{
 					string path = directory + "\\" + string.Format("{0}_{1}_{2}{3}", TxtBox_Name.Text.Trim(), 1, pairControl.Index, pairControl.Right.ImageExtension);
 					pairControl.Right.Image.Save(path);
@@ -59,7 +59,7 @@ namespace ImageOrganizer
 
 		private void BtnClick_ClearImages(object sender, EventArgs e)
 		{
-			imageBlockControl1.Clear();
+			ImageBlockControl_1.Clear();
 		}
 	}
 }

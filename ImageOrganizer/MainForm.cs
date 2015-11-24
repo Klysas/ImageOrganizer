@@ -14,9 +14,20 @@ namespace ImageOrganizer
 {
 	public partial class MainForm : Form
 	{
+		#region Public constructors
+
 		public MainForm()
 		{
 			InitializeComponent();
+		}
+
+		#endregion
+
+		#region Private methods
+
+		private void BtnClick_ClearImages(object sender, EventArgs e)
+		{
+			ImageBlockControl_1.Clear();
 		}
 
 		private void BtnClick_SaveImages(object sender, EventArgs e)
@@ -37,7 +48,7 @@ namespace ImageOrganizer
 				}
 
 				//Check if all images are loaded
-				foreach (var item in imageBlockControl1.ImagePairControls)
+				foreach (var item in ImageBlockControl_1.ImagePairControls)
 				{
 					if (!item.Left.IsImageLoaded() || !item.Right.IsImageLoaded())
 					{
@@ -57,9 +68,6 @@ namespace ImageOrganizer
 			}
 		}
 
-		private void BtnClick_ClearImages(object sender, EventArgs e)
-		{
-			ImageBlockControl_1.Clear();
-		}
+		#endregion
 	}
 }

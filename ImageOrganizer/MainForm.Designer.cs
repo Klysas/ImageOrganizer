@@ -73,10 +73,13 @@
 			// ImageBlockControl_1
 			// 
 			this.ImageBlockControl_1.AllowDrop = true;
+			this.ImageBlockControl_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ImageBlockControl_1.AutoScroll = true;
 			this.ImageBlockControl_1.Location = new System.Drawing.Point(12, 51);
 			this.ImageBlockControl_1.Name = "ImageBlockControl_1";
-			this.ImageBlockControl_1.Size = new System.Drawing.Size(804, 573);
+			this.ImageBlockControl_1.Size = new System.Drawing.Size(643, 270);
 			this.ImageBlockControl_1.TabIndex = 0;
 			// 
 			// MainForm

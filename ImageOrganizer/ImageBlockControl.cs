@@ -12,21 +12,13 @@ namespace ImageOrganizer
 {
 	public partial class ImageBlockControl : UserControl
 	{
-		ImagePairControl[] _list = new ImagePairControl[10];
+		#region Private variables
 
-		public ImageBlockControl()
-		{
-			InitializeComponent();
+		private ImagePairControl[] _list = new ImagePairControl[10];
 
-			for (int i = 0; i < 10; i++)
-			{
-				var item = new ImagePairControl();
-				this.Controls.Add(item);
-				item.Index = i + 1;
-				item.Location = new Point(0, 0 + (i*item.Height));
-				_list[i] = item;
-			}
-		}
+		#endregion
+
+		#region Public properties
 
 		public ImagePairControl[] ImagePairControls
 		{
@@ -36,6 +28,30 @@ namespace ImageOrganizer
 			}
 		}
 
+		#endregion
+
+		#region Public constructors
+
+		public ImageBlockControl()
+		{
+			InitializeComponent();
+
+			for (int i = 0; i < 10; i++)
+			{
+				var control = new ImagePairControl();
+
+				control.Index = i + 1;
+				control.Location = new Point(0, 0 + (i*control.Height));
+
+				this.Controls.Add(control);
+				_list[i] = control;
+			}
+		}
+
+		#endregion
+
+		#region Public methods
+
 		public void Clear()
 		{
 			foreach (var item in _list)
@@ -43,5 +59,7 @@ namespace ImageOrganizer
 				item.Clear();
 			}
 		}
+
+		#endregion
 	}
 }

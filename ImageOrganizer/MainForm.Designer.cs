@@ -95,6 +95,7 @@
 			this.TSBtn_Settings.Name = "TSBtn_Settings";
 			this.TSBtn_Settings.Size = new System.Drawing.Size(53, 22);
 			this.TSBtn_Settings.Text = "Settings";
+			this.TSBtn_Settings.Click += new System.EventHandler(this.TSBtn_Settings_Click);
 			// 
 			// ImageBlockControl_1
 			// 

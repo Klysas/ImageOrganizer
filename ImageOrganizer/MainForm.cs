@@ -14,11 +14,20 @@ namespace ImageOrganizer
 {
 	public partial class MainForm : Form
 	{
+		SettingsForm Settings;
+		
 		#region Public constructors
 
 		public MainForm()
 		{
 			InitializeComponent();
+
+			Settings = new SettingsForm();
+
+			//temp
+
+			PhoneScript.TargetDirectoryOnPC = @"c:\temp\20151123";
+			PhoneScript.TargetDirectoryOnPhone = "sdcard/DCIM/Camera";
 		}
 
 		#endregion
@@ -66,6 +75,11 @@ namespace ImageOrganizer
 					pairControl.Left.Image.Save(path);
 				}
 			}
+		}
+
+		private void TSBtn_Settings_Click(object sender, EventArgs e)
+		{
+			Settings.ShowDialog();
 		}
 
 		#endregion

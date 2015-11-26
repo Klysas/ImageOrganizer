@@ -45,7 +45,10 @@
 			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(312, 284);
 			this.Controls.Add(this.settingsControl1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.MaximizeBox = false;
 			this.Name = "SettingsForm";
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "SettingsForm";
 			this.ResumeLayout(false);

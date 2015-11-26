@@ -23,38 +23,38 @@ namespace ImageOrganizer
 			InitializeComponent();
 
 			Settings = new SettingsForm();
-
-			//temp
-
-			PhoneScript.TargetDirectoryOnPC = @"c:\temp\20151123";
-			PhoneScript.TargetDirectoryOnPhone = "sdcard/DCIM/Camera";
 		}
 
 		#endregion
 
 		#region Private methods
 
-		private void BtnClick_ClearImages(object sender, EventArgs e)
+		private void TSBtn_ClearImages_Click(object sender, EventArgs e)
 		{
 			ImageBlockControl_1.Clear();
 		}
 
-		private void BtnClick_SaveImages(object sender, EventArgs e)
+		private void BtnClick_ClearImages(object sender, EventArgs e)
 		{
-			if(TxtBox_Name.Text != string.Empty && TxtBox_DatabasePath.Text != string.Empty)
-			{
-				string directory = Path.GetDirectoryName(TxtBox_DatabasePath.Text.Trim() + "\\");
-				if (directory == null)
-				{
-					MessageBox.Show("Directory path is incorrect.");
-					return;
-				}
+			
+		}
 
-				if (!Directory.Exists(directory))
-				{
-					Console.WriteLine("Directory created: "+ directory);
-					Directory.CreateDirectory(directory);
-				}
+		private void TSBtn_SaveImages_Click(object sender, EventArgs e)
+		{
+			if (TxtBox_Name.Text != string.Empty)
+			{
+				//string directory = Path.GetDirectoryName(Properties.Settings.Default.PATH_IMAGE_SAVING_DIR + "\\");
+				//if (directory == null)
+				//{
+				//	MessageBox.Show("Directory path is incorrect.");
+				//	return;
+				//}
+
+				//if (!Directory.Exists(directory))
+				//{
+				//	Console.WriteLine("Directory created: "+ directory);
+				//	Directory.CreateDirectory(directory);
+				//}
 
 				//Check if all images are loaded
 				foreach (var item in ImageBlockControl_1.ImagePairControls)
@@ -65,21 +65,25 @@ namespace ImageOrganizer
 						return;
 					}
 				}
-				
-				//Save image files.
-				foreach (var pairControl in ImageBlockControl_1.ImagePairControls)
-				{
-					string path = directory + "\\" + string.Format("{0}_{1}_{2}{3}", TxtBox_Name.Text.Trim(), 1, pairControl.Index, pairControl.Right.ImageExtension);
-					pairControl.Right.Image.Save(path);
-					path = directory + "\\" + string.Format("{0}_{1}_{2}{3}", TxtBox_Name.Text.Trim(), 2, pairControl.Index, pairControl.Left.ImageExtension);
-					pairControl.Left.Image.Save(path);
-				}
+				SaveImages();
 			}
 		}
 
 		private void TSBtn_Settings_Click(object sender, EventArgs e)
 		{
 			Settings.ShowDialog();
+		}
+
+		private void SaveImages()
+		{
+			string directory = Path.GetDirectoryName(Properties.Settings.Default.PATH_IMAGE_SAVING_DIR + "\\");
+			foreach (var pairControl in ImageBlockControl_1.ImagePairControls)
+			{
+				string path = directory + "\\" + string.Format("{0}_{1}_{2}{3}", TxtBox_Name.Text.Trim(), 1, pairControl.Index, pairControl.Right.ImageExtension);
+				pairControl.Right.Image.Save(path);
+				path = directory + "\\" + string.Format("{0}_{1}_{2}{3}", TxtBox_Name.Text.Trim(), 2, pairControl.Index, pairControl.Left.ImageExtension);
+				pairControl.Left.Image.Save(path);
+			}
 		}
 
 		#endregion

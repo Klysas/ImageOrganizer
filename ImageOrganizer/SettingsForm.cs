@@ -15,6 +15,12 @@ namespace ImageOrganizer
 		public SettingsForm()
 		{
 			InitializeComponent();
+			this.Shown += SettingsForm_Shown;
+		}
+
+		void SettingsForm_Shown(object sender, EventArgs e)
+		{
+			settingsControl1.UpdateUI();
 		}
 	}
 }

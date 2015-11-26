@@ -43,29 +43,29 @@
 			this.Lbl_TargetDirectoryOnPc.AutoSize = true;
 			this.Lbl_TargetDirectoryOnPc.Location = new System.Drawing.Point(3, 7);
 			this.Lbl_TargetDirectoryOnPc.Name = "Lbl_TargetDirectoryOnPc";
-			this.Lbl_TargetDirectoryOnPc.Size = new System.Drawing.Size(116, 13);
+			this.Lbl_TargetDirectoryOnPc.Size = new System.Drawing.Size(67, 13);
 			this.Lbl_TargetDirectoryOnPc.TabIndex = 0;
-			this.Lbl_TargetDirectoryOnPc.Text = "Target directory on PC:";
+			this.Lbl_TargetDirectoryOnPc.Text = "PC directory:";
 			// 
 			// Lbl_TargetDirectoryOnPhone
 			// 
 			this.Lbl_TargetDirectoryOnPhone.AutoSize = true;
 			this.Lbl_TargetDirectoryOnPhone.Location = new System.Drawing.Point(3, 33);
 			this.Lbl_TargetDirectoryOnPhone.Name = "Lbl_TargetDirectoryOnPhone";
-			this.Lbl_TargetDirectoryOnPhone.Size = new System.Drawing.Size(133, 13);
+			this.Lbl_TargetDirectoryOnPhone.Size = new System.Drawing.Size(84, 13);
 			this.Lbl_TargetDirectoryOnPhone.TabIndex = 1;
-			this.Lbl_TargetDirectoryOnPhone.Text = "Target directory on Phone:";
+			this.Lbl_TargetDirectoryOnPhone.Text = "Phone directory:";
 			// 
 			// TxtBox_TargetDirOnPC
 			// 
-			this.TxtBox_TargetDirOnPC.Location = new System.Drawing.Point(141, 4);
+			this.TxtBox_TargetDirOnPC.Location = new System.Drawing.Point(130, 3);
 			this.TxtBox_TargetDirOnPC.Name = "TxtBox_TargetDirOnPC";
 			this.TxtBox_TargetDirOnPC.Size = new System.Drawing.Size(144, 20);
 			this.TxtBox_TargetDirOnPC.TabIndex = 2;
 			// 
 			// TxtBox_TargetDirOnPhone
 			// 
-			this.TxtBox_TargetDirOnPhone.Location = new System.Drawing.Point(141, 30);
+			this.TxtBox_TargetDirOnPhone.Location = new System.Drawing.Point(130, 30);
 			this.TxtBox_TargetDirOnPhone.Name = "TxtBox_TargetDirOnPhone";
 			this.TxtBox_TargetDirOnPhone.Size = new System.Drawing.Size(144, 20);
 			this.TxtBox_TargetDirOnPhone.TabIndex = 3;
@@ -78,6 +78,7 @@
 			this.Btn_Save.TabIndex = 4;
 			this.Btn_Save.Text = "Save";
 			this.Btn_Save.UseVisualStyleBackColor = true;
+			this.Btn_Save.Click += new System.EventHandler(this.Btn_Save_Click);
 			// 
 			// Btn_Cancel
 			// 
@@ -100,7 +101,7 @@
 			// 
 			// TxtBox_ImagesSavingDirectory
 			// 
-			this.TxtBox_ImagesSavingDirectory.Location = new System.Drawing.Point(141, 74);
+			this.TxtBox_ImagesSavingDirectory.Location = new System.Drawing.Point(130, 74);
 			this.TxtBox_ImagesSavingDirectory.Name = "TxtBox_ImagesSavingDirectory";
 			this.TxtBox_ImagesSavingDirectory.Size = new System.Drawing.Size(144, 20);
 			this.TxtBox_ImagesSavingDirectory.TabIndex = 7;

@@ -9,7 +9,10 @@ namespace ImageOrganizer
 {
 	class PhoneScript
 	{
-		#region Private static variables
+
+		//========================================================
+		//	Private variables
+		//========================================================
 
 		private static Process _downloadPicturesProc;
 
@@ -19,9 +22,9 @@ namespace ImageOrganizer
 
 		private static string _targetDirectoryOnPhone = string.Empty;
 
-		#endregion
-
-		#region Public static properties
+		//========================================================
+		//	Public properties
+		//========================================================
 
 		/// <summary>
 		/// [GET/SET] Directory on pc.
@@ -71,9 +74,9 @@ namespace ImageOrganizer
 			}
 		}
 
-		#endregion
-
-		#region Private static methods
+		//========================================================
+		//	Private methods
+		//========================================================
 
 		private static void CreateDownloadPicturesProcess()
 		{
@@ -111,7 +114,9 @@ namespace ImageOrganizer
 			info.Arguments = string.Format("/C adb shell \"rm -r {0}\"", _targetDirectoryOnPhone);
 		}
 
-		#endregion
+		//========================================================
+		//	Public methods
+		//========================================================
 
 		/// <summary>
 		/// Deletes TargetDirectoryOnPhone and all its' content.
@@ -137,36 +142,6 @@ namespace ImageOrganizer
 				_downloadPicturesProc.Start();
 				_downloadPicturesProc.WaitForExit();
 			}
-		}
-
-		private static void Execute()
-		{
-			//int exitCode;
-			//ProcessStartInfo processInfo;
-			//Process process;
-
-			//processInfo = new ProcessStartInfo(@"c:\Users\martynasv\Desktop\CopyAndRemoveFromPhone.bat");
-			//processInfo.CreateNoWindow = true;
-			//processInfo.UseShellExecute = false;
-			//// *** Redirect the output ***
-			////processInfo.RedirectStandardError = true;
-			////processInfo.RedirectStandardOutput = true;
-
-			//process = Process.Start(processInfo);
-			//process.WaitForExit();
-
-			//// *** Read the streams ***
-			//// Warning: This approach can lead to deadlocks, see Edit #2
-			////string output = process.StandardOutput.ReadToEnd();
-			////string error = process.StandardError.ReadToEnd();
-
-			//exitCode = process.ExitCode;
-
-			////Console.WriteLine("output>>" + (String.IsNullOrEmpty(output) ? "(none)" : output));
-			////Console.WriteLine("error>>" + (String.IsNullOrEmpty(error) ? "(none)" : error));
-			////Console.WriteLine("ExitCode: " + exitCode.ToString(), "ExecuteCommand");
-
-			//process.Close();
 		}
 	}
 }

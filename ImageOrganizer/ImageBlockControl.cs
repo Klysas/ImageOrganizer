@@ -16,9 +16,7 @@ namespace ImageOrganizer
 
 		private ImagePairControl[] _list = new ImagePairControl[10];
 
-		#endregion
 
-		#region Public properties
 
 		public ImagePairControl[] ImagePairControls
 		{

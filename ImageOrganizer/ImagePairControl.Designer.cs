@@ -29,8 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.GrpBox_Main = new System.Windows.Forms.GroupBox();
-			this.ImageControl_Right = new ImageOrganizer.ImageControl();
-			this.ImageControl_Left = new ImageOrganizer.ImageControl();
+			this.ImageControl_Right = new ImageOrganizer.ImageControl(ImageControl.Position.RIGHT);
+			this.ImageControl_Left = new ImageOrganizer.ImageControl(ImageControl.Position.LEFT);
 			this.GrpBox_Main.SuspendLayout();
 			this.SuspendLayout();
 			// 

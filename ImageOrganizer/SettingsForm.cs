@@ -41,6 +41,7 @@ namespace ImageOrganizer
 			var str = TxtBox_TargetDirOnPC.Text.Trim();
 			if (IsValid(str))
 			{
+				if (!Directory.Exists(str)) Directory.CreateDirectory(str);
 				Properties.Settings.Default.PATH_PC_TARGET_DIR = str;
 			}
 
@@ -51,6 +52,7 @@ namespace ImageOrganizer
 			str = TxtBox_ImagesSavingDirectory.Text.Trim();
 			if (IsValid(str))
 			{
+				if (!Directory.Exists(str)) Directory.CreateDirectory(str);
 				Properties.Settings.Default.PATH_IMAGE_SAVING_DIR = str;
 			}
 

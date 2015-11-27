@@ -14,9 +14,15 @@ namespace ImageOrganizer
 {
 	public partial class MainForm : Form
 	{
-		SettingsForm Settings;
-		
-		#region Public constructors
+		//========================================================
+		//	Private variables
+		//========================================================
+
+		private SettingsForm Settings;
+
+		//========================================================
+		//	Constructors
+		//========================================================
 
 		public MainForm()
 		{
@@ -25,37 +31,19 @@ namespace ImageOrganizer
 			Settings = new SettingsForm();
 		}
 
-		#endregion
-
-		#region Private methods
+		//========================================================
+		//	Private events
+		//========================================================
 
 		private void TSBtn_ClearImages_Click(object sender, EventArgs e)
 		{
 			ImageBlockControl_1.Clear();
 		}
 
-		private void BtnClick_ClearImages(object sender, EventArgs e)
-		{
-			
-		}
-
 		private void TSBtn_SaveImages_Click(object sender, EventArgs e)
 		{
 			if (TxtBox_Name.Text != string.Empty)
 			{
-				//string directory = Path.GetDirectoryName(Properties.Settings.Default.PATH_IMAGE_SAVING_DIR + "\\");
-				//if (directory == null)
-				//{
-				//	MessageBox.Show("Directory path is incorrect.");
-				//	return;
-				//}
-
-				//if (!Directory.Exists(directory))
-				//{
-				//	Console.WriteLine("Directory created: "+ directory);
-				//	Directory.CreateDirectory(directory);
-				//}
-
 				//Check if all images are loaded
 				foreach (var item in ImageBlockControl_1.ImagePairControls)
 				{
@@ -74,6 +62,10 @@ namespace ImageOrganizer
 			Settings.ShowDialog();
 		}
 
+		//========================================================
+		//	Private methods
+		//========================================================
+
 		private void SaveImages()
 		{
 			string directory = Path.GetDirectoryName(Properties.Settings.Default.PATH_IMAGE_SAVING_DIR + "\\");
@@ -86,6 +78,14 @@ namespace ImageOrganizer
 			}
 		}
 
-		#endregion
+		//========================================================
+		//	Public methods
+		//========================================================
+
+		public string getName()
+		{
+			return TxtBox_Name.Text.Trim();
+		}
+
 	}
 }

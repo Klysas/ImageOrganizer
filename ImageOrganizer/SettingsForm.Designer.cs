@@ -36,6 +36,8 @@
 			this.Btn_Cancel = new System.Windows.Forms.Button();
 			this.Lbl_ImageSavingDirectory = new System.Windows.Forms.Label();
 			this.TxtBox_ImagesSavingDirectory = new System.Windows.Forms.TextBox();
+			this.Lbl_BackupDir = new System.Windows.Forms.Label();
+			this.Lbl_BackupDirValue = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// Lbl_TargetDirectoryOnPc
@@ -106,12 +108,32 @@
 			this.TxtBox_ImagesSavingDirectory.Size = new System.Drawing.Size(144, 20);
 			this.TxtBox_ImagesSavingDirectory.TabIndex = 7;
 			// 
+			// Lbl_BackupDir
+			// 
+			this.Lbl_BackupDir.AutoSize = true;
+			this.Lbl_BackupDir.Location = new System.Drawing.Point(12, 114);
+			this.Lbl_BackupDir.Name = "Lbl_BackupDir";
+			this.Lbl_BackupDir.Size = new System.Drawing.Size(90, 13);
+			this.Lbl_BackupDir.TabIndex = 9;
+			this.Lbl_BackupDir.Text = "Backup directory:";
+			// 
+			// Lbl_BackupDirValue
+			// 
+			this.Lbl_BackupDirValue.AutoSize = true;
+			this.Lbl_BackupDirValue.Location = new System.Drawing.Point(135, 114);
+			this.Lbl_BackupDirValue.Name = "Lbl_BackupDirValue";
+			this.Lbl_BackupDirValue.Size = new System.Drawing.Size(36, 13);
+			this.Lbl_BackupDirValue.TabIndex = 10;
+			this.Lbl_BackupDirValue.Text = "PATH";
+			// 
 			// SettingsForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(295, 256);
+			this.Controls.Add(this.Lbl_BackupDirValue);
+			this.Controls.Add(this.Lbl_BackupDir);
 			this.Controls.Add(this.TxtBox_ImagesSavingDirectory);
 			this.Controls.Add(this.Lbl_ImageSavingDirectory);
 			this.Controls.Add(this.Btn_Cancel);
@@ -141,5 +163,7 @@
 		private System.Windows.Forms.Button Btn_Cancel;
 		private System.Windows.Forms.Label Lbl_ImageSavingDirectory;
 		private System.Windows.Forms.TextBox TxtBox_ImagesSavingDirectory;
+		private System.Windows.Forms.Label Lbl_BackupDir;
+		private System.Windows.Forms.Label Lbl_BackupDirValue;
 	}
 }

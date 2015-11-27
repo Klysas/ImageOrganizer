@@ -117,7 +117,6 @@
 			this.AllowDrop = true;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoSize = true;
 			this.ClientSize = new System.Drawing.Size(799, 415);
 			this.Controls.Add(this.Lbl_Name);
 			this.Controls.Add(this.ToolStrip_Menu);

@@ -11,5 +11,8 @@
     <Setting Name="PATH_IMAGE_SAVING_DIR" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\\</Value>
     </Setting>
+    <Setting Name="PATH_BACKUP_DIR" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\\Backup</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

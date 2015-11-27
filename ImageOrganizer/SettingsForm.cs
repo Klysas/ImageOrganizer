@@ -54,6 +54,9 @@ namespace ImageOrganizer
 			{
 				if (!Directory.Exists(str)) Directory.CreateDirectory(str);
 				Properties.Settings.Default.PATH_IMAGE_SAVING_DIR = str;
+				str += "\\Backup";
+				if (!Directory.Exists(str)) Directory.CreateDirectory(str);
+				Properties.Settings.Default.PATH_BACKUP_DIR = str;
 			}
 
 			Properties.Settings.Default.Save();
@@ -89,6 +92,7 @@ namespace ImageOrganizer
 			TxtBox_TargetDirOnPC.Text = Properties.Settings.Default.PATH_PC_TARGET_DIR;
 			TxtBox_TargetDirOnPhone.Text = Properties.Settings.Default.PATH_PHONE_TARGET_DIR;
 			TxtBox_ImagesSavingDirectory.Text = Properties.Settings.Default.PATH_IMAGE_SAVING_DIR;
+			Lbl_BackupDirValue.Text = Properties.Settings.Default.PATH_BACKUP_DIR;
 		}
 	}
 }

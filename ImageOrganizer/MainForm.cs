@@ -29,6 +29,7 @@ namespace ImageOrganizer
 			InitializeComponent();
 
 			Settings = new SettingsForm();
+			UserName = "some";
 		}
 
 		//========================================================
@@ -63,6 +64,16 @@ namespace ImageOrganizer
 		}
 
 		//========================================================
+		//	Public static properties
+		//========================================================
+
+		public static string UserName
+		{
+			get;
+			private set;
+		}
+
+		//========================================================
 		//	Private methods
 		//========================================================
 
@@ -77,15 +88,5 @@ namespace ImageOrganizer
 				pairControl.Left.Image.Save(path);
 			}
 		}
-
-		//========================================================
-		//	Public methods
-		//========================================================
-
-		public string getName()
-		{
-			return TxtBox_Name.Text.Trim();
-		}
-
 	}
 }

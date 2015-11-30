@@ -29,6 +29,7 @@ namespace ImageOrganizer
 		public MainForm()
 		{
 			InitializeComponent();
+			UserName = string.Empty;
 
 			Settings = new SettingsForm();
 			InputName = new NameForm();
@@ -49,7 +50,7 @@ namespace ImageOrganizer
 				TSLbl_Name.Text = string.Format("Name: {0}", UserName);
 				ImageBlockControl_1.Clear();
 			}
-			else if (InputName.DialogResult == System.Windows.Forms.DialogResult.Cancel)
+			else if ((InputName.DialogResult == System.Windows.Forms.DialogResult.Cancel) && (UserName.Equals(string.Empty)))
 			{
 				this.Close();
 			}

@@ -19,6 +19,8 @@ namespace ImageOrganizer
 		public NameForm()
 		{
 			InitializeComponent();
+
+			this.Shown += NameForm_Shown;
 		}
 
 		//========================================================
@@ -34,7 +36,7 @@ namespace ImageOrganizer
 		private void Btn_Ok_Click(object sender, EventArgs e)
 		{
 			string name = TxtBox_Name.Text.Trim();
-			TxtBox_Name.Text = string.Empty;
+
 			if (name.Equals(string.Empty))
 			{
 				MessageBox.Show("Name is empty. Input name.");
@@ -44,6 +46,12 @@ namespace ImageOrganizer
 			Name = name;
 			this.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.Close();
+		}
+
+		void NameForm_Shown(object sender, EventArgs e)
+		{
+			TxtBox_Name.Text = string.Empty;
+			TxtBox_Name.Focus();
 		}
 
 		//========================================================

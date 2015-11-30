@@ -12,28 +12,21 @@ namespace ImageOrganizer
 {
 	public partial class ImageBlockControl : UserControl
 	{
-		#region Private variables
+		//========================================================
+		//	Private variables
+		//========================================================
 
-		private ImagePairControl[] _list = new ImagePairControl[10];
+		private ImagePairControl[] _list;
 
-
-
-		public ImagePairControl[] ImagePairControls
-		{
-			get
-			{
-				return _list;
-			}
-		}
-
-		#endregion
-
-		#region Public constructors
+		//========================================================
+		//	Constructors
+		//========================================================
 
 		public ImageBlockControl()
 		{
 			InitializeComponent();
 
+			_list = new ImagePairControl[10];
 			for (int i = 0; i < 10; i++)
 			{
 				var control = new ImagePairControl();
@@ -46,9 +39,21 @@ namespace ImageOrganizer
 			}
 		}
 
-		#endregion
+		//========================================================
+		//	Public properties
+		//========================================================
 
-		#region Public methods
+		public ImagePairControl[] ImagePairControls
+		{
+			get
+			{
+				return _list;
+			}
+		}
+
+		//========================================================
+		//	Public methods
+		//========================================================
 
 		public void Clear()
 		{
@@ -58,6 +63,31 @@ namespace ImageOrganizer
 			}
 		}
 
-		#endregion
+		/// <summary>
+		/// Gives ImagePairControl by its index.
+		/// </summary>
+		/// <param name="index">Values 1..10</param>
+		/// <returns></returns>
+		public ImagePairControl getImagePairControl(int index)
+		{
+			if (index < 1 || index > 10)
+			{
+				throw new ArgumentOutOfRangeException("Index interval should be [1,10]. Value: " + index);
+			}
+			ImagePairControl control = _list[index - 1];
+
+			if(control.Index != index)
+			{
+				foreach (var item in _list)
+				{
+					if (item.Index == index)
+					{
+						control = item;
+						break;
+					}
+				}
+			}
+			return control;
+		}
 	}
 }

@@ -20,6 +20,8 @@ namespace ImageOrganizer
 
 		private SettingsForm Settings;
 
+		private NameForm InputName;
+
 		//========================================================
 		//	Constructors
 		//========================================================
@@ -29,38 +31,38 @@ namespace ImageOrganizer
 			InitializeComponent();
 
 			Settings = new SettingsForm();
-			UserName = "some";
+			InputName = new NameForm();
+
+			InputName.FormClosed += InputName_FormClosed;
+			this.Shown += MainForm_Shown;
 		}
 
 		//========================================================
 		//	Private events
 		//========================================================
 
+		void InputName_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			if (InputName.DialogResult == System.Windows.Forms.DialogResult.OK)
+			{
+				UserName = InputName.Name;
+			}
+		}
+		
+		void MainForm_Shown(object sender, EventArgs e)
+		{
+			if (UserName == null || UserName.Equals(string.Empty)) InputName.ShowDialog();
+		}
+
 		private void TSBtn_ClearImages_Click(object sender, EventArgs e)
 		{
 			ImageBlockControl_1.Clear();
+			//TODO: remove images from directory(with confirmation).
 		}
 
 		private void TSBtn_New_Click(object sender, EventArgs e)
 		{
-
-		}
-
-		private void TSBtn_SaveImages_Click(object sender, EventArgs e)
-		{
-			if (TxtBox_Name.Text != string.Empty)
-			{
-				//Check if all images are loaded
-				foreach (var item in ImageBlockControl_1.ImagePairControls)
-				{
-					if (!item.Left.IsImageLoaded() || !item.Right.IsImageLoaded())
-					{
-						MessageBox.Show("Not all images are loaded.");
-						return;
-					}
-				}
-				SaveImages();
-			}
+			InputName.ShowDialog();
 		}
 
 		private void TSBtn_Settings_Click(object sender, EventArgs e)
@@ -82,16 +84,5 @@ namespace ImageOrganizer
 		//	Private methods
 		//========================================================
 
-		private void SaveImages()
-		{
-			string directory = Path.GetDirectoryName(Properties.Settings.Default.PATH_IMAGE_SAVING_DIR + "\\");
-			foreach (var pairControl in ImageBlockControl_1.ImagePairControls)
-			{
-				string path = directory + "\\" + string.Format("{0}_{1}_{2}{3}", TxtBox_Name.Text.Trim(), 1, pairControl.Index, pairControl.Right.ImageExtension);
-				pairControl.Right.Image.Save(path);
-				path = directory + "\\" + string.Format("{0}_{1}_{2}{3}", TxtBox_Name.Text.Trim(), 2, pairControl.Index, pairControl.Left.ImageExtension);
-				pairControl.Left.Image.Save(path);
-			}
-		}
 	}
 }

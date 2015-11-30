@@ -49,6 +49,10 @@ namespace ImageOrganizer
 				TSLbl_Name.Text = string.Format("Name: {0}", UserName);
 				ImageBlockControl_1.Clear();
 			}
+			else if (InputName.DialogResult == System.Windows.Forms.DialogResult.Cancel)
+			{
+				this.Close();
+			}
 		}
 		
 		void MainForm_Shown(object sender, EventArgs e)

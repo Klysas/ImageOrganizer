@@ -71,7 +71,18 @@ namespace ImageOrganizer
 		{
 			if(MessageBox.Show(string.Format("Do you want to delete all files for '{0}'", UserName), string.Empty,MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
 			{
-				//TODO: remove images from directory for UserName.
+				try
+				{
+					Utils.DeleteDirectory(Properties.Settings.Default.PATH_IMAGE_SAVING_DIR + "\\" + UserName);
+				}
+				catch (DirectoryNotFoundException)
+				{
+					return;
+				}
+				catch (IOException ex)
+				{
+					MessageBox.Show(ex.ToString(), string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
 			ImageBlockControl_1.Clear();
 		}
@@ -146,6 +157,5 @@ namespace ImageOrganizer
 				index = int.Parse(values[2]);
 			}
 		}
-
 	}
 }

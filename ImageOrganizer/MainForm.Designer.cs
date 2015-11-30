@@ -33,6 +33,7 @@
 			this.TSBtn_ClearImages = new System.Windows.Forms.ToolStripButton();
 			this.TSBtn_Settings = new System.Windows.Forms.ToolStripButton();
 			this.TSBtn_New = new System.Windows.Forms.ToolStripButton();
+			this.TSLbl_Name = new System.Windows.Forms.ToolStripLabel();
 			this.ImageBlockControl_1 = new ImageOrganizer.ImageBlockControl();
 			this.ToolStrip_Menu.SuspendLayout();
 			this.SuspendLayout();
@@ -44,7 +45,8 @@
 			this.ToolStrip_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSBtn_New,
             this.TSBtn_ClearImages,
-            this.TSBtn_Settings});
+            this.TSBtn_Settings,
+            this.TSLbl_Name});
 			this.ToolStrip_Menu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			this.ToolStrip_Menu.Location = new System.Drawing.Point(0, 0);
 			this.ToolStrip_Menu.Name = "ToolStrip_Menu";
@@ -82,9 +84,20 @@
 			this.TSBtn_New.Text = "New";
 			this.TSBtn_New.Click += new System.EventHandler(this.TSBtn_New_Click);
 			// 
+			// TSLbl_Name
+			// 
+			this.TSLbl_Name.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+			this.TSLbl_Name.Margin = new System.Windows.Forms.Padding(0, 1, 50, 2);
+			this.TSLbl_Name.Name = "TSLbl_Name";
+			this.TSLbl_Name.Size = new System.Drawing.Size(41, 22);
+			this.TSLbl_Name.Text = "NAME";
+			// 
 			// ImageBlockControl_1
 			// 
 			this.ImageBlockControl_1.AllowDrop = true;
+			this.ImageBlockControl_1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ImageBlockControl_1.AutoScroll = true;
 			this.ImageBlockControl_1.Location = new System.Drawing.Point(12, 28);
 			this.ImageBlockControl_1.Name = "ImageBlockControl_1";
@@ -116,6 +129,7 @@
 		private System.Windows.Forms.ToolStripButton TSBtn_Settings;
 		private System.Windows.Forms.ToolStripButton TSBtn_ClearImages;
 		private System.Windows.Forms.ToolStripButton TSBtn_New;
+		private System.Windows.Forms.ToolStripLabel TSLbl_Name;
 
 
 	}

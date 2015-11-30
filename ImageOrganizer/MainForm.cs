@@ -46,6 +46,8 @@ namespace ImageOrganizer
 			if (InputName.DialogResult == System.Windows.Forms.DialogResult.OK)
 			{
 				UserName = InputName.Name;
+				TSLbl_Name.Text = string.Format("Name: {0}", UserName);
+				ImageBlockControl_1.Clear();
 			}
 		}
 		
@@ -56,8 +58,11 @@ namespace ImageOrganizer
 
 		private void TSBtn_ClearImages_Click(object sender, EventArgs e)
 		{
+			if(MessageBox.Show(string.Format("Do you want to delete all files for '{0}'", UserName), string.Empty,MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+			{
+				//TODO: remove images from directory for UserName.
+			}
 			ImageBlockControl_1.Clear();
-			//TODO: remove images from directory(with confirmation).
 		}
 
 		private void TSBtn_New_Click(object sender, EventArgs e)

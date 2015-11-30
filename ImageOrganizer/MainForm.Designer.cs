@@ -36,6 +36,7 @@
 			this.TSBtn_Settings = new System.Windows.Forms.ToolStripButton();
 			this.Lbl_Name = new System.Windows.Forms.Label();
 			this.ImageBlockControl_1 = new ImageOrganizer.ImageBlockControl();
+			this.TSBtn_New = new System.Windows.Forms.ToolStripButton();
 			this.ToolStrip_Menu.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -51,6 +52,7 @@
 			this.ToolStrip_Menu.CanOverflow = false;
 			this.ToolStrip_Menu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.ToolStrip_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TSBtn_New,
             this.TSBtn_SaveImages,
             this.TSBtn_ClearImages,
             this.TSBtn_Settings});
@@ -65,7 +67,6 @@
 			this.TSBtn_SaveImages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
 			this.TSBtn_SaveImages.Image = ((System.Drawing.Image)(resources.GetObject("TSBtn_SaveImages.Image")));
 			this.TSBtn_SaveImages.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.TSBtn_SaveImages.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
 			this.TSBtn_SaveImages.Name = "TSBtn_SaveImages";
 			this.TSBtn_SaveImages.Size = new System.Drawing.Size(76, 22);
 			this.TSBtn_SaveImages.Text = "Save images";
@@ -112,6 +113,17 @@
 			this.ImageBlockControl_1.Size = new System.Drawing.Size(775, 338);
 			this.ImageBlockControl_1.TabIndex = 0;
 			// 
+			// TSBtn_New
+			// 
+			this.TSBtn_New.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.TSBtn_New.Image = ((System.Drawing.Image)(resources.GetObject("TSBtn_New.Image")));
+			this.TSBtn_New.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.TSBtn_New.Margin = new System.Windows.Forms.Padding(12, 1, 0, 2);
+			this.TSBtn_New.Name = "TSBtn_New";
+			this.TSBtn_New.Size = new System.Drawing.Size(35, 22);
+			this.TSBtn_New.Text = "New";
+			this.TSBtn_New.Click += new System.EventHandler(this.TSBtn_New_Click);
+			// 
 			// MainForm
 			// 
 			this.AllowDrop = true;
@@ -141,6 +153,7 @@
 		private System.Windows.Forms.ToolStripButton TSBtn_SaveImages;
 		private System.Windows.Forms.ToolStripButton TSBtn_ClearImages;
 		private System.Windows.Forms.Label Lbl_Name;
+		private System.Windows.Forms.ToolStripButton TSBtn_New;
 
 
 	}

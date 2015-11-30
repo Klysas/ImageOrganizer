@@ -58,17 +58,5 @@ namespace ImageOrganizer.Properties {
                 this["PATH_IMAGE_SAVING_DIR"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\\\Backup")]
-        public string PATH_BACKUP_DIR {
-            get {
-                return ((string)(this["PATH_BACKUP_DIR"]));
-            }
-            set {
-                this["PATH_BACKUP_DIR"] = value;
-            }
-        }
     }
 }

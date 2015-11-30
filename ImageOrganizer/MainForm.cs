@@ -41,6 +41,11 @@ namespace ImageOrganizer
 			ImageBlockControl_1.Clear();
 		}
 
+		private void TSBtn_New_Click(object sender, EventArgs e)
+		{
+
+		}
+
 		private void TSBtn_SaveImages_Click(object sender, EventArgs e)
 		{
 			if (TxtBox_Name.Text != string.Empty)

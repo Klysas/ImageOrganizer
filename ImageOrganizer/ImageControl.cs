@@ -139,10 +139,12 @@ namespace ImageOrganizer
 			BackupImage();
 		}
 
+		/// <summary>
+		/// Saves image to "Backup\UserName" directory.
+		/// </summary>
 		private void BackupImage()
 		{
-			if (!Directory.Exists(Properties.Settings.Default.PATH_BACKUP_DIR)) Directory.CreateDirectory(Properties.Settings.Default.PATH_BACKUP_DIR);
-			string userDir = Properties.Settings.Default.PATH_BACKUP_DIR + "\\" + MainForm.UserName;
+			string userDir = Properties.Settings.Default.PATH_IMAGE_SAVING_DIR + "\\" + MainForm.UserName;
 			if (!Directory.Exists(userDir)) Directory.CreateDirectory(userDir);
 
 			Image.Save(userDir + string.Format("\\{0}_{1}_{2}{3}", MainForm.UserName, (int)this.position,

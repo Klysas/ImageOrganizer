@@ -112,6 +112,8 @@
 			this.ClientSize = new System.Drawing.Size(841, 369);
 			this.Controls.Add(this.ToolStrip_Menu);
 			this.Controls.Add(this.ImageBlockControl_1);
+			this.MaximumSize = new System.Drawing.Size(857, 9999);
+			this.MinimumSize = new System.Drawing.Size(857, 408);
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Image Organizer";

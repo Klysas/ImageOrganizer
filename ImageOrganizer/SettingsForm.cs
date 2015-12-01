@@ -44,12 +44,13 @@ namespace ImageOrganizer
 				if (!Directory.Exists(str)) Directory.CreateDirectory(str);
 				Properties.Settings.Default.PATH_PC_TARGET_DIR = str;
 			}
-
+			
 			// Phone directory.
 			Properties.Settings.Default.PATH_PHONE_TARGET_DIR = TxtBox_TargetDirOnPhone.Text.Trim();
 
 			// Image saving directory.
 			str = TxtBox_ImagesSavingDirectory.Text.Trim();
+
 			if (IsValid(str))
 			{
 				if (!Directory.Exists(str)) Directory.CreateDirectory(str);
@@ -72,7 +73,15 @@ namespace ImageOrganizer
 
 		private bool IsValid(string str)
 		{
-			return (str != string.Empty && Path.GetDirectoryName(str) != null);
+			try
+			{
+				return (str != string.Empty && Path.GetDirectoryName(str) != null && Path.IsPathRooted(str));
+			}
+			catch (ArgumentException ex)
+			{
+				MessageBox.Show(ex.ToString(), string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
+			}
 		}
 
 		private void UpdateSettings()

@@ -48,6 +48,8 @@
 			// ImageControl_Right
 			// 
 			this.ImageControl_Right.AllowDrop = true;
+			this.ImageControl_Right.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ImageControl_Right.Location = new System.Drawing.Point(402, 19);
 			this.ImageControl_Right.Name = "ImageControl_Right";
 			this.ImageControl_Right.Size = new System.Drawing.Size(391, 258);
@@ -56,6 +58,8 @@
 			// ImageControl_Left
 			// 
 			this.ImageControl_Left.AllowDrop = true;
+			this.ImageControl_Left.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
 			this.ImageControl_Left.Location = new System.Drawing.Point(3, 19);
 			this.ImageControl_Left.Name = "ImageControl_Left";
 			this.ImageControl_Left.Size = new System.Drawing.Size(392, 258);

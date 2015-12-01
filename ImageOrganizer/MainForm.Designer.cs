@@ -30,9 +30,9 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.ToolStrip_Menu = new System.Windows.Forms.ToolStrip();
+			this.TSBtn_New = new System.Windows.Forms.ToolStripButton();
 			this.TSBtn_ClearImages = new System.Windows.Forms.ToolStripButton();
 			this.TSBtn_Settings = new System.Windows.Forms.ToolStripButton();
-			this.TSBtn_New = new System.Windows.Forms.ToolStripButton();
 			this.TSLbl_Name = new System.Windows.Forms.ToolStripLabel();
 			this.ImageBlockControl_1 = new ImageOrganizer.ImageBlockControl();
 			this.ToolStrip_Menu.SuspendLayout();
@@ -50,8 +50,19 @@
 			this.ToolStrip_Menu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			this.ToolStrip_Menu.Location = new System.Drawing.Point(0, 0);
 			this.ToolStrip_Menu.Name = "ToolStrip_Menu";
-			this.ToolStrip_Menu.Size = new System.Drawing.Size(792, 25);
+			this.ToolStrip_Menu.Size = new System.Drawing.Size(841, 25);
 			this.ToolStrip_Menu.TabIndex = 5;
+			// 
+			// TSBtn_New
+			// 
+			this.TSBtn_New.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.TSBtn_New.Image = ((System.Drawing.Image)(resources.GetObject("TSBtn_New.Image")));
+			this.TSBtn_New.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.TSBtn_New.Margin = new System.Windows.Forms.Padding(12, 1, 0, 2);
+			this.TSBtn_New.Name = "TSBtn_New";
+			this.TSBtn_New.Size = new System.Drawing.Size(35, 22);
+			this.TSBtn_New.Text = "New";
+			this.TSBtn_New.Click += new System.EventHandler(this.TSBtn_New_Click);
 			// 
 			// TSBtn_ClearImages
 			// 
@@ -73,17 +84,6 @@
 			this.TSBtn_Settings.Text = "Settings";
 			this.TSBtn_Settings.Click += new System.EventHandler(this.TSBtn_Settings_Click);
 			// 
-			// TSBtn_New
-			// 
-			this.TSBtn_New.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.TSBtn_New.Image = ((System.Drawing.Image)(resources.GetObject("TSBtn_New.Image")));
-			this.TSBtn_New.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.TSBtn_New.Margin = new System.Windows.Forms.Padding(12, 1, 0, 2);
-			this.TSBtn_New.Name = "TSBtn_New";
-			this.TSBtn_New.Size = new System.Drawing.Size(35, 22);
-			this.TSBtn_New.Text = "New";
-			this.TSBtn_New.Click += new System.EventHandler(this.TSBtn_New_Click);
-			// 
 			// TSLbl_Name
 			// 
 			this.TSLbl_Name.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -101,7 +101,7 @@
 			this.ImageBlockControl_1.AutoScroll = true;
 			this.ImageBlockControl_1.Location = new System.Drawing.Point(12, 28);
 			this.ImageBlockControl_1.Name = "ImageBlockControl_1";
-			this.ImageBlockControl_1.Size = new System.Drawing.Size(775, 338);
+			this.ImageBlockControl_1.Size = new System.Drawing.Size(824, 338);
 			this.ImageBlockControl_1.TabIndex = 0;
 			// 
 			// MainForm
@@ -109,7 +109,7 @@
 			this.AllowDrop = true;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(792, 369);
+			this.ClientSize = new System.Drawing.Size(841, 369);
 			this.Controls.Add(this.ToolStrip_Menu);
 			this.Controls.Add(this.ImageBlockControl_1);
 			this.Name = "MainForm";

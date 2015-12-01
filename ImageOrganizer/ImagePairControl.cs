@@ -12,11 +12,24 @@ namespace ImageOrganizer
 {
 	public partial class ImagePairControl : UserControl
 	{
-
+		//========================================================
+		//	Private variables
+		//========================================================
 
 		private int _index;
 
+		//========================================================
+		//	Constructors
+		//========================================================
+		
+		public ImagePairControl()
+		{
+			InitializeComponent();
+		}
 
+		//========================================================
+		//	Public properties
+		//========================================================
 
 		public int Index
 		{
@@ -47,20 +60,14 @@ namespace ImageOrganizer
 			}
 		}
 
-
-		public ImagePairControl()
-		{
-			InitializeComponent();
-		}
-
-
-
+		//========================================================
+		//	Public methods
+		//========================================================
 
 		public void Clear()
 		{
 			ImageControl_Left.Clear();
 			ImageControl_Right.Clear();
 		}
-
 	}
 }

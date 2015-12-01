@@ -43,14 +43,14 @@
 			this.Lbl_TargetDirectoryOnPc.AutoSize = true;
 			this.Lbl_TargetDirectoryOnPc.Location = new System.Drawing.Point(11, 14);
 			this.Lbl_TargetDirectoryOnPc.Name = "Lbl_TargetDirectoryOnPc";
-			this.Lbl_TargetDirectoryOnPc.Size = new System.Drawing.Size(67, 13);
+			this.Lbl_TargetDirectoryOnPc.Size = new System.Drawing.Size(118, 13);
 			this.Lbl_TargetDirectoryOnPc.TabIndex = 0;
-			this.Lbl_TargetDirectoryOnPc.Text = "PC directory:";
+			this.Lbl_TargetDirectoryOnPc.Text = "PC directory (empty dir):";
 			// 
 			// Lbl_TargetDirectoryOnPhone
 			// 
 			this.Lbl_TargetDirectoryOnPhone.AutoSize = true;
-			this.Lbl_TargetDirectoryOnPhone.Location = new System.Drawing.Point(11, 40);
+			this.Lbl_TargetDirectoryOnPhone.Location = new System.Drawing.Point(11, 57);
 			this.Lbl_TargetDirectoryOnPhone.Name = "Lbl_TargetDirectoryOnPhone";
 			this.Lbl_TargetDirectoryOnPhone.Size = new System.Drawing.Size(84, 13);
 			this.Lbl_TargetDirectoryOnPhone.TabIndex = 1;
@@ -65,14 +65,14 @@
 			// 
 			// TxtBox_TargetDirOnPhone
 			// 
-			this.TxtBox_TargetDirOnPhone.Location = new System.Drawing.Point(138, 37);
+			this.TxtBox_TargetDirOnPhone.Location = new System.Drawing.Point(138, 54);
 			this.TxtBox_TargetDirOnPhone.Name = "TxtBox_TargetDirOnPhone";
 			this.TxtBox_TargetDirOnPhone.Size = new System.Drawing.Size(144, 20);
 			this.TxtBox_TargetDirOnPhone.TabIndex = 3;
 			// 
 			// Btn_Save
 			// 
-			this.Btn_Save.Location = new System.Drawing.Point(61, 228);
+			this.Btn_Save.Location = new System.Drawing.Point(61, 137);
 			this.Btn_Save.Name = "Btn_Save";
 			this.Btn_Save.Size = new System.Drawing.Size(75, 23);
 			this.Btn_Save.TabIndex = 4;
@@ -82,7 +82,7 @@
 			// 
 			// Btn_Cancel
 			// 
-			this.Btn_Cancel.Location = new System.Drawing.Point(156, 228);
+			this.Btn_Cancel.Location = new System.Drawing.Point(156, 137);
 			this.Btn_Cancel.Name = "Btn_Cancel";
 			this.Btn_Cancel.Size = new System.Drawing.Size(75, 23);
 			this.Btn_Cancel.TabIndex = 5;
@@ -111,7 +111,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(295, 256);
+			this.ClientSize = new System.Drawing.Size(295, 167);
 			this.Controls.Add(this.TxtBox_ImagesSavingDirectory);
 			this.Controls.Add(this.Lbl_ImageSavingDirectory);
 			this.Controls.Add(this.Btn_Cancel);

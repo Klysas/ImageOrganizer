@@ -136,13 +136,13 @@ namespace ImageOrganizer
 		{
 			Image = NImage.FromFile(file);
 			ImageExtension = Path.GetExtension(file);
-			BackupImage();
+			SaveImage();
 		}
 
 		/// <summary>
-		/// Saves image to "Backup\UserName" directory.
+		/// Saves image to "\UserName" directory.
 		/// </summary>
-		private void BackupImage()
+		private void SaveImage()
 		{
 			string userDir = Properties.Settings.Default.PATH_IMAGE_SAVING_DIR + "\\" + MainForm.UserName;
 			if (!Directory.Exists(userDir)) Directory.CreateDirectory(userDir);

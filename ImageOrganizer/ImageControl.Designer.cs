@@ -51,7 +51,7 @@ namespace ImageOrganizer
 			this.Btn_LoadImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.Btn_LoadImage.Location = new System.Drawing.Point(260, 19);
 			this.Btn_LoadImage.Name = "Btn_LoadImage";
-			this.Btn_LoadImage.Size = new System.Drawing.Size(115, 23);
+			this.Btn_LoadImage.Size = new System.Drawing.Size(115, 127);
 			this.Btn_LoadImage.TabIndex = 1;
 			this.Btn_LoadImage.Text = "Load Image";
 			this.Btn_LoadImage.UseVisualStyleBackColor = true;

@@ -22,6 +22,8 @@ namespace ImageOrganizer
 
 		private NameForm InputName;
 
+		private int _index = 0;
+
 		//========================================================
 		//	Constructors
 		//========================================================
@@ -36,6 +38,8 @@ namespace ImageOrganizer
 
 			InputName.FormClosed += InputName_FormClosed;
 			this.Shown += MainForm_Shown;
+			this.KeyPreview = true;
+			this.KeyDown += MainForm_KeyDown;
 		}
 
 		//========================================================
@@ -49,6 +53,7 @@ namespace ImageOrganizer
 				UserName = InputName.Name;
 				TSLbl_Name.Text = string.Format("Name: {0}", UserName);
 				ImageBlockControl_1.Clear();
+				_index = 0;
 
 				if(UserExists(UserName) 
 					&& (MessageBox.Show("User already exists, do you want to load saved images?", string.Empty, MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes))
@@ -60,8 +65,36 @@ namespace ImageOrganizer
 			{
 				this.Close();
 			}
+			UpdateUI();
 		}
-		
+
+		void MainForm_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Return && !e.Shift) // RETURN
+			{
+				if (IsImageLoaded())
+				{
+					_index++;
+				}
+				LoadImage();
+			}
+			if (e.KeyCode == Keys.Return && e.Shift) // SHIFT + RETURN
+			{
+				LoadImage();
+			}
+			if (e.KeyCode == Keys.End) // END
+			{
+				if(_index < 19)
+					_index++;
+			}
+			if (e.KeyCode == Keys.Delete) // DELETE
+			{
+				if(_index > 0)
+					_index--;
+			}
+			UpdateUI();
+		}
+
 		void MainForm_Shown(object sender, EventArgs e)
 		{
 			if (UserName == null || UserName.Equals(string.Empty)) InputName.ShowDialog();
@@ -85,6 +118,8 @@ namespace ImageOrganizer
 				}
 			}
 			ImageBlockControl_1.Clear();
+			_index = 0;
+			UpdateUI();
 		}
 
 		private void TSBtn_New_Click(object sender, EventArgs e)
@@ -117,6 +152,43 @@ namespace ImageOrganizer
 			return false;
 		}
 
+		private void UpdateUI()
+		{
+			for (int i = 1; i <= 10; i++)
+			{
+				ImageBlockControl_1.getImagePairControl(i).Right.SetGroupBGColor(System.Drawing.SystemColors.Control);
+				ImageBlockControl_1.getImagePairControl(i).Left.SetGroupBGColor(System.Drawing.SystemColors.Control);
+			}
+
+			switch (_index % 2)
+			{
+				case 0: ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Right.SetGroupBGColor(System.Drawing.SystemColors.ControlDark);
+					break;
+				case 1: ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Left.SetGroupBGColor(System.Drawing.SystemColors.ControlDark);
+					break;
+			}
+		}
+
+		private bool IsImageLoaded()
+		{
+			switch (_index % 2)
+			{
+				case 0: return ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Right.IsImageLoaded();
+				case 1: return ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Left.IsImageLoaded();
+				default: return false;
+			}
+		}
+
+		private bool LoadImage()
+		{
+			switch (_index % 2)
+			{
+				case 0: return ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Right.LoadImage();
+				case 1: return ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Left.LoadImage();
+				default: return false;
+			}
+		}
+
 		private void LoadUserImages()
 		{
 			var files = Directory.GetFiles(Properties.Settings.Default.PATH_IMAGE_SAVING_DIR + "\\" + UserName);
@@ -144,6 +216,29 @@ namespace ImageOrganizer
 					}
 				}
 			}
+			
+			// Updates index position.
+			_index = -1;
+			for (int i = 1; i <= 10; i++)
+			{
+				if (ImageBlockControl_1.getImagePairControl(i).Right.IsImageLoaded())
+				{
+					_index++;
+				}
+				else
+				{
+					break;
+				}
+				if (ImageBlockControl_1.getImagePairControl(i).Left.IsImageLoaded()) 
+				{
+					_index++;
+				}
+				else
+				{
+					break;
+				}
+			}
+			if (_index == -1) _index++;
 		}
 
 		private void ExtractValuesFromFileName(string fileName, out int index, out int position)

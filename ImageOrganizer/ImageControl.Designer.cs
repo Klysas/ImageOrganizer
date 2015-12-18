@@ -37,8 +37,10 @@ namespace ImageOrganizer
 			// 
 			// GrpBox_Main
 			// 
+			this.GrpBox_Main.BackColor = System.Drawing.SystemColors.Control;
 			this.GrpBox_Main.Controls.Add(this.Btn_LoadImage);
 			this.GrpBox_Main.Controls.Add(this._irisView);
+			this.GrpBox_Main.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.GrpBox_Main.Location = new System.Drawing.Point(3, 0);
 			this.GrpBox_Main.Name = "GrpBox_Main";
 			this.GrpBox_Main.Size = new System.Drawing.Size(381, 255);

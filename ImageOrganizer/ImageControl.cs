@@ -86,24 +86,7 @@ namespace ImageOrganizer
 
 		private void Btn_LoadImage_Click(object sender, EventArgs e)
 		{
-			PhoneScript.DownloadFilesFromPhone();
-			PhoneScript.DeleteDirectoryOnPhone();
-
-			//Loads image from dir 
-			var dir = Path.GetDirectoryName(Properties.Settings.Default.PATH_PC_TARGET_DIR + "\\");
-			if (Directory.GetFiles(dir).Length != 0)
-			{
-				var path = Directory.GetFiles(dir)[0];
-				if (path != null)
-				{
-					LoadImage(path);
-					File.Delete(path);
-				}
-			}
-			else
-			{
-				MessageBox.Show("No files were found.");
-			}
+			LoadImage();
 		}
 
 		//========================================================
@@ -171,5 +154,33 @@ namespace ImageOrganizer
 			return false;
 		}
 
+		public bool LoadImage()
+		{
+			PhoneScript.DownloadFilesFromPhone();
+			PhoneScript.DeleteDirectoryOnPhone();
+
+			//Loads image from dir 
+			var dir = Path.GetDirectoryName(Properties.Settings.Default.PATH_PC_TARGET_DIR + "\\");
+			if (Directory.GetFiles(dir).Length != 0)
+			{
+				var path = Directory.GetFiles(dir)[0];
+				if (path != null)
+				{
+					LoadImage(path);
+					File.Delete(path);
+				}
+				return true;
+			}
+			else
+			{
+				MessageBox.Show("No files were found.");
+				return false;
+			}
+		}
+
+		public void SetGroupBGColor(Color color)
+		{
+			GrpBox_Main.BackColor = color;
+		}
 	}
 }

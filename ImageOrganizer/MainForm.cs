@@ -40,6 +40,7 @@ namespace ImageOrganizer
 			this.Shown += MainForm_Shown;
 			this.KeyPreview = true;
 			this.KeyDown += MainForm_KeyDown;
+			
 		}
 
 		//========================================================
@@ -70,7 +71,8 @@ namespace ImageOrganizer
 
 		void MainForm_KeyDown(object sender, KeyEventArgs e)
 		{
-			if (e.KeyCode == Keys.Return && !e.Shift) // RETURN
+			Console.WriteLine(e.KeyCode);
+			if (e.KeyCode == Keys.Enter && !e.Control) // SPACE
 			{
 				if (IsImageLoaded())
 				{
@@ -78,7 +80,7 @@ namespace ImageOrganizer
 				}
 				LoadImage();
 			}
-			if (e.KeyCode == Keys.Return && e.Shift) // SHIFT + RETURN
+			if (e.KeyCode == Keys.Space && e.Control) // CONTROL + SPACE
 			{
 				LoadImage();
 			}
@@ -162,9 +164,17 @@ namespace ImageOrganizer
 
 			switch (_index % 2)
 			{
-				case 0: ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Right.SetGroupBGColor(System.Drawing.SystemColors.ControlDark);
+				case 0:
+					{
+						ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Right.SetGroupBGColor(System.Drawing.SystemColors.ControlDark);
+						ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Right.Focus();
+					}
 					break;
-				case 1: ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Left.SetGroupBGColor(System.Drawing.SystemColors.ControlDark);
+				case 1:
+					{
+						ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Left.SetGroupBGColor(System.Drawing.SystemColors.ControlDark);
+						ImageBlockControl_1.getImagePairControl((_index / 2) + 1).Left.Focus();
+					}
 					break;
 			}
 		}

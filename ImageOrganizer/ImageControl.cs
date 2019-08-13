@@ -117,6 +117,7 @@ namespace ImageOrganizer
 
 		private void LoadImage(string file)
 		{
+			Clear();
 			Image = NImage.FromFile(file);
 			ImageExtension = Path.GetExtension(file);
 			SaveImage();
